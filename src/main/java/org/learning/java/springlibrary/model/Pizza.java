@@ -15,6 +15,8 @@ public class Pizza {
     private String description;
     private double price;
 
+    private String url;
+
     //GETTERS & SETTERS
     public int getId() {
         return id;
@@ -46,5 +48,13 @@ public class Pizza {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

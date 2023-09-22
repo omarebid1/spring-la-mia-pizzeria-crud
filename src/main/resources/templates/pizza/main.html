@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7183/7183811.png" type="image/x-icon" sizes="48x48">
+    <title>PIZZA OMARIÑO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+<body>
+
+<nav th:replace="fragments/navbar"></nav>
+
+<div class="container-fluid pt-5 m-0" style="background-image: url('https://c4.wallpaperflare.com/wallpaper/748/744/935/pizza-fire-fast-food-food-wallpaper-preview.jpg'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+    <div class="text-center">
+        <h1 class="text-center text-success display-1 ">Welcome to PIZZA OMARIÑO</h1>
+        <h3 class="text-center text-success mb-0"><em>- Super Italian Pizza -</em></h3>
+        <br><br>
+        <br>
+        <br>
+        <a th:href="@{/pizza/view}" class="btn btn-success text-center btn-lg mb-5">Explore Our Spcialities</a>
+        <br>
+        <br>
+    </div>
+</div>
+
+<footer class="mt-1" th:replace="fragments/footer"></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+</html>

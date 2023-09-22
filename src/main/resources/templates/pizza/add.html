@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head"></head>
+<body class="bg-dark">
+
+<nav th:replace="fragments/navbar"></nav>
+
+
+<div class="container m-5">
+    <h1 class="text-center font-monospace text-white">Add New Pizza</h1>
+    <form class="m-5"
+          id="pizza-form"
+          th:action="@{/pizza/add}"
+          th:object="${pizza}"
+          method="POST">
+        <div class="form-group py-2">
+            <label for="productUrl" class="fs-4 text-white">URL</label>
+            <input type="url" class="form-control" id="productUrl" placeholder="Enter product URL" th:field="*{url}">
+        </div>
+        <div class="form-group py-2">
+            <label for="pizzatName" class="fs-4 text-white">Name</label>
+            <input type="text" class="form-control" id="pizzatName" placeholder="Pizza Type" th:field="*{name}">
+        </div>
+        <div class="form-group py-2">
+            <label for="pizzaDescription" class="fs-4 text-white">Description</label>
+            <input type="text" class="form-control" id="pizzaDescription" placeholder="Pizza Description" th:field="*{description}">
+        </div>
+        <div class="form-group py-2">
+            <label for="pizzaPrice" class="fs-4 text-white">Price</label>
+            <input type="number" class="form-control" id="pizzaPrice" placeholder="Pizza Price" th:field="*{price}">
+        </div>
+        <div class="text-center mt-5">
+            <button type="submit" class="btn btn-success">Submit</button>
+            <a class="btn btn-success" th:href="@{/}">Cancel</a>
+        </div>
+    </form>
+</div>
+
+
+<footer th:replace="fragments/footer"></footer>
+
+<script type="text/javascript" src="./js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+</html>
