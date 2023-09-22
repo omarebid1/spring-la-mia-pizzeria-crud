@@ -72,4 +72,23 @@ public class PizzaController {
         pizzaRepo.save(formPizza);
         return "redirect:/pizza/view";
     }
+
+    @PostMapping("/delete/{id}")
+    public String delete(@PathVariable Integer id){
+        pizzaRepo.deleteById(id);
+        return "redirect:/pizza/view";
+    }
 }
+
+/*
+
+@PostMapping("/delete/{id}")
+  public String deleteById(@PathVariable Integer id) {
+    // cancello il book
+    bookRepository.deleteById(id);
+    // rimando alla pagina con la lista
+    return "redirect:/books";
+  }
+
+
+* */
