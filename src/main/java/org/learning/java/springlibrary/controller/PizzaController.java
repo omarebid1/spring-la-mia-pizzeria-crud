@@ -6,6 +6,7 @@ import org.learning.java.springlibrary.repository.PizzaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -78,17 +79,30 @@ public class PizzaController {
         pizzaRepo.deleteById(id);
         return "redirect:/pizza/view";
     }
+
+    @Service
+    public class SearchService {
+
+        @Autowired
+        private static PizzaRepository searchRepository;
+
+        public static List<Pizza> search(String query) {
+            return searchRepository.findByName(query);
+        }
+    }
+
+    @GetMapping("/search")
+    public String search(@RequestParam("query") String query, Model model) {
+        model.addAttribute("query", query);
+        return "/pizza/details-details";
+    }
+
+    /*
+
+    @GetMapping("/search")
+    public String search(@RequestParam("query") String query, Model model) {
+        model.addAttribute("query", query);
+        return "search-results";
+    }
+     */
 }
-
-/*
-
-@PostMapping("/delete/{id}")
-  public String deleteById(@PathVariable Integer id) {
-    // cancello il book
-    bookRepository.deleteById(id);
-    // rimando alla pagina con la lista
-    return "redirect:/books";
-  }
-
-
-* */
