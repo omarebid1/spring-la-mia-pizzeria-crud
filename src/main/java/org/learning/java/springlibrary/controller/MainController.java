@@ -12,7 +12,7 @@ public class MainController {
 
     @GetMapping
     public String index(){
-        return "/pizza/main";
+        return "/pizza/index";
     }
 
 }
