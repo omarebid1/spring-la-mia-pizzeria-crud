@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class MainController {
 
+    // JUST FOR DIRECTING TO HOME PAGE
+
     @GetMapping
     public String index(){
         return "/pizza/main";

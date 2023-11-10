@@ -22,6 +22,8 @@ public class PizzaController {
     @Autowired
     private PizzaRepository pizzaRepo;
 
+
+    // TO VIEW ALL PIZZA TYPES
     @GetMapping("/view")
     public String index(Model model){
         List<Pizza> pizzaList = pizzaRepo.findAll();
